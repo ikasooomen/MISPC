@@ -1,4 +1,5 @@
-using DG.Tweening;
+//エラーをはいている影響で全体のDebugができないので応急処置
+/*using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -41,3 +42,4 @@ public class PlayerGauge : MonoBehaviour
         this.player = player;
     }
 }
+*/
