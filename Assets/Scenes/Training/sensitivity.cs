@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class sensitivity: MonoBehaviour
 {
-    public float sensi=3;
     public new GameObject camera;
 
     void Start()
     {
+        Cursor.visible = false;
     }
 
     void Update()
@@ -21,8 +21,8 @@ public class sensitivity: MonoBehaviour
     {
         float x_Rotation = Input.GetAxis("Mouse X");
         float y_Rotation = Input.GetAxis("Mouse Y");
-        x_Rotation = x_Rotation * sensi;
-        y_Rotation = y_Rotation * sensi;
+        x_Rotation = x_Rotation * PlayerPrefs.GetFloat("sensi1"); 
+        y_Rotation = y_Rotation * PlayerPrefs.GetFloat("sensi1");
         this.transform.Rotate(0, x_Rotation, 0);
         camera.transform.Rotate(-y_Rotation, 0, 0);
     }

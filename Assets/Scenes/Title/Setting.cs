@@ -25,11 +25,16 @@ public class Setting : MonoBehaviour
         {
             if (settingPanel.activeSelf)
             {
+                if (SceneManager.GetActiveScene().name != "TitleScene")
+                { // TitleSceneÇ≈ÇÃÇ›Ç‚ÇËÇΩÇ¢èàóù
+                    Cursor.visible = false;
+                }
                 settingPanel.SetActive(false);
             }
             else
             {
                 settingPanel.SetActive(true);
+                Cursor.visible = true;
             }
 
                
@@ -39,6 +44,7 @@ public class Setting : MonoBehaviour
     public void Esc()
     {
         settingPanel.SetActive(true);
+
     }
 
     public void Endgame()

@@ -5,22 +5,21 @@ using UnityEngine.UI;
 
 public class sensitivityUI : MonoBehaviour
 {
-    public GameObject Player;
     public Slider sensitivitybar;
-    public InputField input;
-
-    sensitivity SScript;
-
-    
+    public InputField input;   
     
     void Start()
     {
-        SScript = Player.GetComponent<sensitivity>();
+        if (!PlayerPrefs.HasKey("sensi1"))
+        {
+            PlayerPrefs.SetFloat("sensi1", 3);
+        }
+
         sensitivitybar = sensitivitybar.GetComponent<Slider>();
         input = input.GetComponent<InputField>();
 
         float maxHp = 10f;
-        float nowHp = SScript.sensi;
+        float nowHp = PlayerPrefs.GetFloat("sensi1");
         Debug.Log(nowHp);
 
         input.placeholder.GetComponent<Text>().text = nowHp.ToString();
@@ -33,10 +32,12 @@ public class sensitivityUI : MonoBehaviour
         
     }
 
+
+
     public void ValueBar()
     {
-        SScript.sensi = sensitivitybar.value;
-        input.text = SScript.sensi.ToString();
+        PlayerPrefs.SetFloat("sensi1", sensitivitybar.value);
+        input.text = PlayerPrefs.GetFloat("sensi1").ToString();
     }
 
     public void ValueInput()
@@ -44,10 +45,10 @@ public class sensitivityUI : MonoBehaviour
         float num = float.Parse(input.text);
         if (num > 10) num = 10;
         else if (num < 0) num = 0;
-        SScript.sensi = num;
+        PlayerPrefs.SetFloat("sensi1",num);
 
         input.text = num.ToString();
-        sensitivitybar.value = SScript.sensi;
+        sensitivitybar.value = PlayerPrefs.GetFloat("sensi1");
 
     }
 
