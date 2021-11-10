@@ -3,7 +3,14 @@ guid: 6c5fb5c1ef3cc974c91f9f9eafbb166c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - settingPanel: {instanceID: 0}
+  - mainPanel: {instanceID: 0}
+  - subPanel1: {instanceID: 0}
+  - text: {instanceID: 0}
+  - dropdown: {instanceID: 0}
+  - Camera: {instanceID: 0}
+  - fovdropdown: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
