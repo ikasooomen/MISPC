@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class sensitivity: MonoBehaviour
 {
     public new GameObject camera;
-
+    [SerializeField] private Dropdown dropdown;
     void Start()
     {
         Cursor.visible = false;
@@ -26,4 +26,6 @@ public class sensitivity: MonoBehaviour
         this.transform.Rotate(0, x_Rotation, 0);
         camera.transform.Rotate(-y_Rotation, 0, 0);
     }
+
+
 }

@@ -9,13 +9,35 @@ public class Setting : MonoBehaviour
     public GameObject settingPanel;
     public GameObject mainPanel;
     public GameObject subPanel1;
-    public Text text;
+    public Text maintext;
+    public Text subtext;
     [SerializeField] private Dropdown dropdown;//DropdownÇäiî[Ç∑ÇÈïœêî
+    [SerializeField] private Camera Camera;
+    [SerializeField] private Dropdown fovdropdown;
 
     // Start is called before the first frame update
     void Start()
     {
         Screen.SetResolution(1920, 1080, true, 60);
+
+        if (!PlayerPrefs.HasKey("FOV")) PlayerPrefs.SetFloat("FOV", 2);
+        
+        if (PlayerPrefs.GetFloat("FOV") == 0)
+        {
+            Camera.fieldOfView = 90;
+            fovdropdown.value = 0;
+        }
+        else if (PlayerPrefs.GetFloat("FOV") == 1)
+        {
+            Camera.fieldOfView = 110;
+            fovdropdown.value = 1;
+        }
+        else if (PlayerPrefs.GetFloat("FOV") == 2)
+        {
+            Camera.fieldOfView = 103;
+            fovdropdown.value = 2;
+        }
+
     }
 
     // Update is called once per frame
@@ -52,19 +74,27 @@ public class Setting : MonoBehaviour
         Application.Quit();
     }
 
-    public void PointerEnter()
+    public void PointerEnter() 
     {
-        text.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+        maintext.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+        subtext.color = new Color(1.0f, 1.0f, 1.0f, 0.7f);
     }
     public void PointerExit()
     {
-        text.color = new Color(1.0f, 1.0f, 1.0f, 0.7f);
+        maintext.color = new Color(1.0f, 1.0f, 1.0f, 0.7f);
+        subtext.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
     }
+    
 
-    public void ChangePanel()
+    public void ChangePanelmain()
     {
         mainPanel.SetActive(true);
         subPanel1.SetActive(false);
+    }
+    public void ChangePanelsub()
+    {
+        mainPanel.SetActive(false);
+        subPanel1.SetActive(true);
     }
 
 
@@ -85,4 +115,25 @@ public class Setting : MonoBehaviour
         settingPanel.SetActive(false);
         SceneManager.LoadScene("TitleScene");
     }
+
+    public void fov()
+    {
+        if (fovdropdown.value == 0)
+        {
+            Camera.fieldOfView = 90;
+            PlayerPrefs.SetFloat("FOV", 0);
+        }
+        else if (fovdropdown.value == 1)
+        {
+            Camera.fieldOfView = 110;
+            PlayerPrefs.SetFloat("FOV", 1);
+        }
+        else if (fovdropdown.value == 2)
+        {
+            Camera.fieldOfView = 103;
+            PlayerPrefs.SetFloat("FOV", 2);
+        }
+
+    }
+
 }
