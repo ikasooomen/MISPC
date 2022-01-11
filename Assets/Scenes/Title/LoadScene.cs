@@ -12,11 +12,11 @@ public class LoadScene : MonoBehaviour
 
     public void ChangeCPUScene()
     {
-        //SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("SampleScene");
     }
 
     public void ChangeTrainingScene()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("TrainingScene");
     }
 }
