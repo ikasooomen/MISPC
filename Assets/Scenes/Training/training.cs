@@ -26,7 +26,7 @@ public class training : MonoBehaviour
         
     }
 
-    public void OnTriggerEnter(Collider other)
+    public void Break()//OnTriggerEnter()
     {
         // rangeA‚ÆrangeB‚ÌxÀ•W‚Ì”ÍˆÍ“à‚Åƒ‰ƒ“ƒ_ƒ€‚È”’l‚ğì¬
         float x = Random.Range(rangeA.position.x, rangeB.position.x);
