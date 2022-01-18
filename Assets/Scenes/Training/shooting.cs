@@ -5,21 +5,21 @@ using UnityEngine;
 public class shooting : MonoBehaviour
 {
 
-    public GameObject bulletPrefab;
-    public float shotSpeed ;
-
+    public LayerMask layerMask;
+    public QueryTriggerInteraction queryTriggerInteraction;
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetMouseButtonDown(0))
         {
-            GameObject bullet = (GameObject)Instantiate(bulletPrefab, transform.position, Quaternion.Euler(transform.parent.eulerAngles.x, transform.parent.eulerAngles.y, transform.parent.eulerAngles.z));
-            Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
-            bulletRb.AddForce(transform.forward * shotSpeed);
-
-            //éÀåÇÇ≥ÇÍÇƒÇ©ÇÁ3ïbå„Ç…èeíeÇÃÉIÉuÉWÉFÉNÉgÇîjâÛÇ∑ÇÈ.
-            Destroy(bullet, 3.0f);
+            //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = new Ray(transform.position + transform.rotation * new Vector3(0, 0, 0.01f), transform.forward);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit,10000.0f , layerMask, queryTriggerInteraction))
+            {
+                hit.collider.GetComponent<training>().Break();
+                //Debug.Log(hit.collider.gameObject.transform.position);
+            }
+            Debug.DrawRay(ray.origin, ray.direction * 10, Color.red, 5);
         }
     }
-
-
 }
