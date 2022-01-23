@@ -54,6 +54,6 @@ public class FireBullet : MonoBehaviour
         // 出現させたボールの名前を"bullet"に変更
         newBall.name = bullet.name;
         // 出現させたボールを0.8秒後に消す
-        Destroy(newBall, 40.0f);
     }
+
 }
