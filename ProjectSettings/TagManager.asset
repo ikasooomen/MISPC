@@ -8,6 +8,7 @@ TagManager:
   - Fire
   - Shell
   - ATARIHANTEI
+  - Target
   layers:
   - Default
   - TransparentFX
