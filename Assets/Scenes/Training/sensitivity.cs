@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class sensitivity: MonoBehaviour
 {
+    public GameObject settingPanel;
     public new GameObject camera;
     [SerializeField] private Dropdown dropdown;
     float angle = 0;
@@ -16,15 +17,22 @@ public class sensitivity: MonoBehaviour
 
     void Update()
     {
-        cameracon();
+        if (settingPanel.activeSelf)
+        {
+            
+        }
+        else
+        {
+            cameracon();
+        }
     }
 
     void cameracon()
     {
         float x_Rotation = Input.GetAxis("Mouse X");
         float y_Rotation = Input.GetAxis("Mouse Y");
-        x_Rotation = x_Rotation * PlayerPrefs.GetFloat("sensi1"); 
-        y_Rotation = y_Rotation * PlayerPrefs.GetFloat("sensi1") * -1;
+        x_Rotation = x_Rotation * PlayerPrefs.GetFloat("sensi1")/2; 
+        y_Rotation = y_Rotation * PlayerPrefs.GetFloat("sensi1") * -1/2;
         float maxLimit = 85, minLimit = 0;
         minLimit = 360 - maxLimit;
         //XŽ²‰ñ“]
