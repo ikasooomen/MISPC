@@ -6,34 +6,44 @@ public class FireBullet : MonoBehaviour
 {
     [SerializeField]
     [Tooltip("’e‚Ì”­ËêŠ")]
-    private GameObject firingPoint;
+    public GameObject firingPoint;
 
     [SerializeField]
     [Tooltip("’e")]
-    private GameObject bullet;
+    public GameObject bullet;
 
 
     [SerializeField]
     [Tooltip("’e‚Ì‘¬‚³")]
-    private float speed = 30f;
+    public float Maxspeed = 150f;
+    public float Minspeed = 30f;
+
+    [SerializeField]
+    [Tooltip("ŠÔ")]
+    public float interval = 1f;
+
+    [SerializeField]
+    public float tmpTime = 0;
 
     // Update is called once per frame
     void Update()
     {
-        // ƒXƒy[ƒXƒL[‚ª‰Ÿ‚³‚ê‚½‚©‚ğ”»’è
-        if (Input.GetKeyDown(KeyCode.Space))
+          tmpTime += Time.deltaTime;
+        if (tmpTime >= interval)
         {
-            // ’e‚ğ”­Ë‚·‚é
+
             LauncherShot();
+
+            tmpTime = 0;
         }
     }
 
     /// <summary>
     /// ’e‚Ì”­Ë
     /// </summary>
-    private void LauncherShot()
+    public void LauncherShot()
     {
-        float speed = 100f;//”ò‚Î‚·‚Æ‚«‚Ì‰‘¬“x
+        float speed = Random.Range(Minspeed, Maxspeed);
 
         float MinAngle = 0f;
         float MaxAngle = 359f;
