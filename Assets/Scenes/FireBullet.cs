@@ -25,11 +25,17 @@ public class FireBullet : MonoBehaviour
     [SerializeField]
     public float tmpTime = 0;
 
+    private bool start = false;
+
+    float startcooldown = 6f;
     // Update is called once per frame
     void Update()
     {
-          tmpTime += Time.deltaTime;
-        if (tmpTime >= interval)
+        tmpTime += Time.deltaTime;
+        startcooldown -= Time.deltaTime;
+        if (startcooldown <= 1f) start = true;
+
+        if (start==true&&tmpTime >= interval)
         {
 
             LauncherShot();
@@ -65,5 +71,8 @@ public class FireBullet : MonoBehaviour
         newBall.name = bullet.name;
         // èoåªÇ≥ÇπÇΩÉ{Å[ÉãÇ0.8ïbå„Ç…è¡Ç∑
     }
+    void Start()
+    {
 
+    }
 }
