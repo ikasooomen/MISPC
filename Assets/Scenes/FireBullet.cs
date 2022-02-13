@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 public class FireBullet : MonoBehaviour
 {
+    private float timer;
+
+
     [SerializeField]
     [Tooltip("弾の発射場所")]
     public GameObject firingPoint;
@@ -15,8 +18,8 @@ public class FireBullet : MonoBehaviour
 
     [SerializeField]
     [Tooltip("弾の速さ")]
-    public float Maxspeed = 150f;
-    public float Minspeed = 30f;
+    public float Maxspeed = 600f;
+    public float Minspeed = 100f;
 
     [SerializeField]
     [Tooltip("時間")]
@@ -35,6 +38,15 @@ public class FireBullet : MonoBehaviour
             LauncherShot();
 
             tmpTime = 0;
+        }
+
+        timer += Time.deltaTime;
+
+        if (timer >= 2f && interval > 0.6f)
+        {
+            interval -= 0.01f;
+            timer = 0f;
+            //Debug.Log(interval);
         }
     }
 
@@ -63,7 +75,10 @@ public class FireBullet : MonoBehaviour
 
         // 出現させたボールの名前を"bullet"に変更
         newBall.name = bullet.name;
-        // 出現させたボールを0.8秒後に消す
+        // 出現させたボールを20秒後に消す
+
+        
     }
+
 
 }
