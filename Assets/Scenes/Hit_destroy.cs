@@ -15,7 +15,9 @@ public class Hit_destroy : MonoBehaviour
 
 		if (collision.gameObject.tag == "ATARIHANTEI")
 		{
+			float dmg = 0.25f;
 			Destroy(gameObject);
+			PlayerStats.Instance.TakeDamage(dmg);
 		}
 	}
 
