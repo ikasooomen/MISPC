@@ -11,46 +11,47 @@ public class Hit_destroy : MonoBehaviour
 
 	void Start()
     {
-		//‹Ê‚ÌF‚ğ“§–¾‚É‚·‚é
+		//ï¿½Ê‚ÌFï¿½ğ“§–ï¿½ï¿½É‚ï¿½ï¿½ï¿½
 		GetComponent<Renderer>().material.color = new Color32(0,0,0,0);
-		//F‚ğ–ß‚·ˆ—‚ğ‚µ‚½‚çtrue‚É‚È‚é
+		//ï¿½Fï¿½ï¿½ß‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½trueï¿½É‚È‚ï¿½
 		tama_red = false;
 		deleteTime = 20f;
 	}
 
-	//‹Ê‚ª‚È‚ñ‚©‚É“–‚½‚Á‚½”­“®
+	//ï¿½Ê‚ï¿½ï¿½È‚ñ‚©‚É“ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	void OnCollisionEnter(Collision collision)
 	{
-		//F‚ª–ß‚Á‚Ä‚Ä
+		//ï¿½Fï¿½ï¿½ï¿½ß‚ï¿½Ä‚ï¿½
 		if(tama_red == true)
         {
-			//ƒvƒŒƒCƒ„[‚ªŒ‚‚Á‚½’e‚É“–‚½‚Á‚½
+			//ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½eï¿½É“ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if (collision.gameObject.tag == "Bullet" || collision.gameObject.tag == "prpr")
 			{
-				//‹Ê‚ğÁ‚·
+				//ï¿½Ê‚ï¿½ï¿½ï¿½
 				Destroy(gameObject);
 			}
 
-			//“GƒvƒŒƒCƒ„[‚É“–‚½‚Á‚½
-			if (collision.gameObject.tag == "ATARIHANTEI")
-			{
-				//‹Ê‚ğÁ‚·
-				Destroy(gameObject);
-			}
+
+		if (collision.gameObject.tag == "ATARIHANTEI")
+		{
+			float dmg = 0.25f;
+			Destroy(gameObject);
+			PlayerStats.Instance.TakeDamage(dmg);
+
 		}
 		
 	}
 
 	void Update()
     {
-		//ŠÔ‚ğ0‚©‚çƒJƒEƒ“ƒgƒAƒbƒv
+		//ï¿½ï¿½ï¿½Ô‚ï¿½0ï¿½ï¿½ï¿½ï¿½Jï¿½Eï¿½ï¿½ï¿½gï¿½Aï¿½bï¿½v
 		tama_timer+=Time.deltaTime;
-		//‹Ê‚ª¶¬‚³‚ê‚Ä‚©‚ç1•bŒã‚ÅA‹Ê‚ÌF‚ª“§–¾‚Å‚ ‚é
+		//ï¿½Ê‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½1ï¿½bï¿½ï¿½ÅAï¿½Ê‚ÌFï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å‚ï¿½ï¿½é
         if (tama_timer >= 1f && tama_red == false)
         {
-			//‹Ê‚ÌF‚ğÔ‚É‚·‚é
+			//ï¿½Ê‚ÌFï¿½ï¿½Ô‚É‚ï¿½ï¿½ï¿½
 			GetComponent<Renderer>().material.color = new Color32(255,0,0,255);
-			//‹Ê‚ÌF‚ªÔ‚É‚È‚Á‚½‚±‚Æ‚ğ‹L˜^
+			//ï¿½Ê‚ÌFï¿½ï¿½ï¿½Ô‚É‚È‚ï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½Lï¿½^
 			tama_red = true;
 			this.tag = "Bullet";
 		}

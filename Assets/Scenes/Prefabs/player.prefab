@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 43048003268393381}
   - component: {fileID: 43048003268393377}
   - component: {fileID: 43048003268393436}
+  - component: {fileID: -967777749377274570}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -195,6 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89f7c67d57032484fa92578a5822b309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settingPanel: {fileID: 0}
   camera: {fileID: 43048002869900489}
   dropdown: {fileID: 0}
 --- !u!114 &43048003268393436
@@ -211,10 +213,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firingPoint: {fileID: 43048003268393380}
   bullet: {fileID: 2360682818279382032, guid: 977076cdc53b97e43a1e02f41f22843a, type: 3}
+
   Maxspeed: 600
-  Minspeed: 100
+  Minspeed: 150
   interval: 1
   tmpTime: 0
+--- !u!114 &-967777749377274570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43048003268393380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0b64c0b1dccc64d91eee52d85267bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  maxHealth: 10
+  maxTotalHealth: 10
+
 --- !u!1001 &1882250481774324493
 PrefabInstance:
   m_ObjectHideFlags: 0
