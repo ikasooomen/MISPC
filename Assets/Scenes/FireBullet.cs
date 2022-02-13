@@ -8,31 +8,37 @@ public class FireBullet : MonoBehaviour
 
 
     [SerializeField]
-    [Tooltip("’e‚Ì”­ËêŠ")]
+    [Tooltip("å¼¾ã®ç™ºå°„å ´æ‰€")]
     public GameObject firingPoint;
 
     [SerializeField]
-    [Tooltip("’e")]
+    [Tooltip("å¼¾")]
     public GameObject bullet;
 
 
     [SerializeField]
-    [Tooltip("’e‚Ì‘¬‚³")]
+    [Tooltip("å¼¾ã®é€Ÿã•")]
     public float Maxspeed = 600f;
     public float Minspeed = 100f;
 
     [SerializeField]
-    [Tooltip("ŠÔ")]
+    [Tooltip("æ™‚é–“")]
     public float interval = 1f;
 
     [SerializeField]
     public float tmpTime = 0;
 
+    private bool start = false;
+
+    float startcooldown = 6f;
     // Update is called once per frame
     void Update()
     {
-          tmpTime += Time.deltaTime;
-        if (tmpTime >= interval)
+        tmpTime += Time.deltaTime;
+        startcooldown -= Time.deltaTime;
+        if (startcooldown <= 1f) start = true;
+
+        if (start==true&&tmpTime >= interval)
         {
 
             LauncherShot();
@@ -51,7 +57,7 @@ public class FireBullet : MonoBehaviour
     }
 
     /// <summary>
-    /// ’e‚Ì”­Ë
+    /// å¼¾ã®ç™ºå°„
     /// </summary>
     public void LauncherShot()
     {
@@ -61,7 +67,7 @@ public class FireBullet : MonoBehaviour
         float MaxAngle = 359f;
 
 
-        // ’e‚ğ”­Ë‚·‚éêŠ‚ğæ“¾
+        // å¼¾ã‚’ç™ºå°„ã™ã‚‹å ´æ‰€ã‚’å–å¾—
         Vector3 bulletPosition = firingPoint.transform.position;
 
 
@@ -73,12 +79,11 @@ public class FireBullet : MonoBehaviour
         newBall.GetComponent<Rigidbody>().AddForce(newBall.transform.forward * speed, ForceMode.Impulse);
 
 
-        // oŒ»‚³‚¹‚½ƒ{[ƒ‹‚Ì–¼‘O‚ğ"bullet"‚É•ÏX
+        // å‡ºç¾ã•ã›ãŸãƒœãƒ¼ãƒ«ã®åå‰ã‚’"bullet"ã«å¤‰æ›´
         newBall.name = bullet.name;
-        // oŒ»‚³‚¹‚½ƒ{[ƒ‹‚ğ20•bŒã‚ÉÁ‚·
+        // å‡ºç¾ã•ã›ãŸãƒœãƒ¼ãƒ«ã‚’20ç§’å¾Œã«æ¶ˆã™
 
         
     }
-
 
 }
