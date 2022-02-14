@@ -23,7 +23,7 @@ public class FireBullet : MonoBehaviour
 
     [SerializeField]
     [Tooltip("時間")]
-    public float interval = 1f;
+    public float interval = 0.8f;
 
     [SerializeField]
     public float tmpTime = 0;
