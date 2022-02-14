@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Hit_destroy : MonoBehaviour
 {
@@ -8,6 +10,7 @@ public class Hit_destroy : MonoBehaviour
 	private float deleteTime;
 	public bool tama_red;
 
+	public static int heart = 10;
 
 	void Start()
     {
@@ -33,10 +36,10 @@ public class Hit_destroy : MonoBehaviour
 
 			if (collision.gameObject.tag == "ATARIHANTEI")
 			{
-				float dmg = 0.25f;
+				float dmg = 1f;
 				Destroy(gameObject);
 				PlayerStats.Instance.TakeDamage(dmg);
-
+				heart-=1;
 			}
 		}
 	}
@@ -55,5 +58,7 @@ public class Hit_destroy : MonoBehaviour
 			this.tag = "Bullet";
 		}
 		Destroy(gameObject, deleteTime);
+
+
 	}
 }
