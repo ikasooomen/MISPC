@@ -9,6 +9,7 @@ public class Hit_destroy : MonoBehaviour
 	private float tama_timer;
 	private float deleteTime;
 	public bool tama_red;
+	public bool tama_blue;
 
 	public static int heart = 10;
 
@@ -18,6 +19,7 @@ public class Hit_destroy : MonoBehaviour
 		GetComponent<Renderer>().material.color = new Color32(0,0,0,0);
 		
 		tama_red = false;
+		tama_blue = false;
 		deleteTime = 20f;
 	}
 
@@ -27,19 +29,27 @@ public class Hit_destroy : MonoBehaviour
 
 		if (tama_red == true)
 		{
-			if (collision.gameObject.tag == "Bullet" || collision.gameObject.tag == "prpr")
+			if (collision.gameObject.tag == "Bullet2" || collision.gameObject.tag == "Bullet" || collision.gameObject.tag == "prpr")
 			{
 
 				Destroy(gameObject);
 			}
 
 
-			if (collision.gameObject.tag == "ATARIHANTEI")
+			if (this.tag=="Bullet2"&&collision.gameObject.name == "AH_p1")
 			{
 				float dmg = 1f;
 				Destroy(gameObject);
 				PlayerStats.Instance.TakeDamage(dmg);
 				heart-=1;
+			}
+
+			else if (this.tag== "Bullet"&&collision.gameObject.name == "AH_p2")
+			{
+				float dmg = 1f;
+				Destroy(gameObject);
+				PlayerStats.Instance.TakeDamage(dmg);
+				heart -= 1;
 			}
 		}
 	}
@@ -49,13 +59,22 @@ public class Hit_destroy : MonoBehaviour
 		
 		tama_timer+=Time.deltaTime;
 		
-        if (tama_timer >= 1f && tama_red == false)
+        if (tama_timer >= 1f && this.name== "bullet_player1" && tama_red == false)
         {
 			
 			GetComponent<Renderer>().material.color = new Color32(255,0,0,255);
 
 			tama_red = true;
 			this.tag = "Bullet";
+		}
+
+		if (tama_timer >= 1f && this.name == "bullet_player2" && tama_blue == false)
+		{
+
+			GetComponent<Renderer>().material.color = new Color32(0, 0, 255, 255);
+
+			tama_blue = true;
+			this.tag = "Bullet2";
 		}
 		Destroy(gameObject, deleteTime);
 

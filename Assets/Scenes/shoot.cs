@@ -15,7 +15,7 @@ public class shoot : MonoBehaviour
             RaycastHit hit;
              if (Physics.Raycast(ray, out hit,10000.0f , layerMask, queryTriggerInteraction))
              {
-                if (hit.collider.gameObject.tag == "Bullet")
+                if (hit.collider.gameObject.tag == "Bullet"|| hit.collider.gameObject.tag == "Bullet2")
                 {
                     Destroy(hit.collider.gameObject);
                 }

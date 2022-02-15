@@ -8,19 +8,16 @@ TagManager:
   - Fire
   - Shell
   - ATARIHANTEI
-
   - prpr
-
-  - Target
-
+  - Bullet2
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - player
+  - 
   - Water
   - UI
-  - bullet
+  - 
   - 
   - 
   - 
