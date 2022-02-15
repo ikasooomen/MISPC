@@ -23,7 +23,7 @@ public class FireBullet : MonoBehaviour
 
     [SerializeField]
     [Tooltip("時間")]
-    public float interval = 0.8f;
+    public float interval = 0.75f;
 
     [SerializeField]
     public float tmpTime = 0;
@@ -48,7 +48,7 @@ public class FireBullet : MonoBehaviour
 
         timer += Time.deltaTime;
 
-        if (timer >= 2f && interval > 0.6f)
+        if (timer >= 2f && interval > 0.55f)
         {
             interval -= 0.01f;
             timer = 0f;
@@ -76,11 +76,21 @@ public class FireBullet : MonoBehaviour
         float zkaku = Random.Range(MinAngle, MaxAngle);
         Quaternion kakudo = Quaternion.Euler(xkaku, ykaku, zkaku);
         GameObject newBall = Instantiate(bullet, bulletPosition, kakudo) as GameObject; 
+
+        if (firingPoint.name == "player")
+        {
+            newBall.name = "bullet_player1";
+        }
+
+        else
+        {
+            newBall.name = "bullet_player2";
+        }
+
         newBall.GetComponent<Rigidbody>().AddForce(newBall.transform.forward * speed, ForceMode.Impulse);
 
 
         // 出現させたボールの名前を"bullet"に変更
-        newBall.name = bullet.name;
         // 出現させたボールを20秒後に消す
 
         
