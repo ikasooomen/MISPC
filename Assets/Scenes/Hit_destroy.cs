@@ -27,7 +27,7 @@ public class Hit_destroy : MonoBehaviour
 	void OnCollisionEnter(Collision collision)
 	{
 
-		if (tama_red == true)
+		if (tama_red == true||tama_blue==true)
 		{
 			if (collision.gameObject.tag == "Bullet2" || collision.gameObject.tag == "Bullet" || collision.gameObject.tag == "prpr")
 			{
@@ -41,15 +41,13 @@ public class Hit_destroy : MonoBehaviour
 				float dmg = 1f;
 				Destroy(gameObject);
 				PlayerStats.Instance.TakeDamage(dmg);
-				heart-=1;
 			}
 
 			else if (this.tag== "Bullet"&&collision.gameObject.name == "AH_p2")
 			{
 				float dmg = 1f;
 				Destroy(gameObject);
-				PlayerStats.Instance.TakeDamage(dmg);
-				heart -= 1;
+				//PlayerStats.Instance.TakeDamage(dmg);
 			}
 		}
 	}
@@ -59,7 +57,7 @@ public class Hit_destroy : MonoBehaviour
 		
 		tama_timer+=Time.deltaTime;
 		
-        if (tama_timer >= 1f && this.name== "bullet_player1" && tama_red == false)
+        if (tama_timer >= 0.8f && this.name== "bullet_player1" && tama_red == false)
         {
 			
 			GetComponent<Renderer>().material.color = new Color32(255,0,0,255);
@@ -68,7 +66,7 @@ public class Hit_destroy : MonoBehaviour
 			this.tag = "Bullet";
 		}
 
-		if (tama_timer >= 1f && this.name == "bullet_player2" && tama_blue == false)
+		if (tama_timer >= 0.8f && this.name == "bullet_player2" && tama_blue == false)
 		{
 
 			GetComponent<Renderer>().material.color = new Color32(0, 0, 255, 255);

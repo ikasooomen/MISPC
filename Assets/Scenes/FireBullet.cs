@@ -61,6 +61,11 @@ public class FireBullet : MonoBehaviour
     /// </summary>
     public void LauncherShot()
     {
+
+        Maxspeed = 300f;
+        Minspeed = 100f;
+        interval = 0.75f;
+
         float speed = Random.Range(Minspeed, Maxspeed);
 
         float MinAngle = 0f;
