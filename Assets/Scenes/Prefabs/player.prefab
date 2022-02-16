@@ -213,10 +213,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firingPoint: {fileID: 43048003268393380}
   bullet: {fileID: 2360682818279382032, guid: 977076cdc53b97e43a1e02f41f22843a, type: 3}
-
   Maxspeed: 600
-  Minspeed: 150
-  interval: 1
+  Minspeed: 100
+  interval: 0.75
   tmpTime: 0
 --- !u!114 &-967777749377274570
 MonoBehaviour:
@@ -233,7 +232,6 @@ MonoBehaviour:
   health: 10
   maxHealth: 10
   maxTotalHealth: 10
-
 --- !u!1001 &1882250481774324493
 PrefabInstance:
   m_ObjectHideFlags: 0

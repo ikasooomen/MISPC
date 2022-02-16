@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class sensitivity: MonoBehaviour
 {
-    public GameObject settingPanel;
     public new GameObject camera;
     [SerializeField] private Dropdown dropdown;
     float angle = 0;
@@ -13,18 +12,16 @@ public class sensitivity: MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked; 
         Cursor.visible = false;
+        camera = GameObject.Find("PlayerCamera");
+        //camera.transform.parent = transform;
     }
 
     void Update()
     {
-        if (settingPanel.activeSelf)
-        {
-            
-        }
-        else
-        {
-            cameracon();
-        }
+        
+        cameracon();
+        
+        
     }
 
     void cameracon()
@@ -44,9 +41,9 @@ public class sensitivity: MonoBehaviour
             localAngle.x = minLimit;
         camera.transform.localEulerAngles = localAngle;
         //YŽ²‰ñ“]
-        var angle = this.transform.eulerAngles;
+        var angle = camera.transform.eulerAngles;
         angle.y += x_Rotation;
-        transform.eulerAngles = angle;
+        camera.transform.eulerAngles = angle;
     }
 
 
