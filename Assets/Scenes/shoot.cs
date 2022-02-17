@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class shoot : MonoBehaviour
 {
-
     public LayerMask layerMask;
     public QueryTriggerInteraction queryTriggerInteraction;
+    GameObject scoreObject;
+
+    void Start()
+    {
+        scoreObject = GameObject.Find("ScriptIrerutoko");
+    }
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -17,6 +23,7 @@ public class shoot : MonoBehaviour
              {
                 if (hit.collider.gameObject.tag == "Bullet"|| hit.collider.gameObject.tag == "Bullet2")
                 {
+                    scoreObject.GetComponent<CountText>().AddScore();
                     Destroy(hit.collider.gameObject);
                 }
             }
