@@ -6,7 +6,6 @@ using System;
 
 public class sensitivity: MonoBehaviour
 {
-    public GameObject settingPanel;
     public new GameObject camera;
     [SerializeField] private Dropdown dropdown;
     float angle = 0;
@@ -31,12 +30,14 @@ public class sensitivity: MonoBehaviour
         {
             hipfire = 180 / (PlayerPrefs.GetFloat("dpi") * 0.07f * PlayerPrefs.GetFloat("sensi1")) * 2.54f;
         }
-        perdeg = ((hipfire/180) / 2.54f) * dpi; //‚PƒsƒNƒZƒ‹“–‚½‚è‚Ì“x”
+        perdeg = ((hipfire/180) / 2.54f) * dpi; //â€šPÆ’sÆ’NÆ’ZÆ’â€¹â€œâ€“â€šÂ½â€šÃ¨â€šÃŒâ€œxÂâ€
         perdeg = 1 / perdeg;
         ch = true;
         Debug.Log(hipfire);
         // prevPos = new Vector2(Screen.width / 2, Screen.height / 2);
         //Debug.Log("dpi:"+ perdeg);
+        camera = GameObject.Find("PlayerCamera");
+        //camera.transform.parent = transform;
     }
 
     void Update()
@@ -49,7 +50,7 @@ public class sensitivity: MonoBehaviour
         {
             hipfire = 180 / (PlayerPrefs.GetFloat("dpi") * 0.07f * PlayerPrefs.GetFloat("sensi1")) * 2.54f;
         }
-        perdeg = ((hipfire / 180) / 2.54f) * dpi; //‚P“x“–‚½‚è‚Ìpx
+        perdeg = ((hipfire / 180) / 2.54f) * dpi; //â€šPâ€œxâ€œâ€“â€šÂ½â€šÃ¨â€šÃŒpx
         perdeg = 1 / perdeg;
 
         if (settingPanel.activeSelf)
@@ -69,7 +70,6 @@ public class sensitivity: MonoBehaviour
         {
             cameracon();
         }
-
     }
 
     void cameracon()
@@ -98,7 +98,7 @@ public class sensitivity: MonoBehaviour
 
         float maxLimit = 85, minLimit = 0;
         minLimit = 360 - maxLimit;
-        //XŽ²‰ñ“]
+        //XÅ½Â²â€°Ã±â€œ]
         var localAngle = camera.transform.localEulerAngles;
         localAngle.x += y_Rotation;
         if (localAngle.x > maxLimit && localAngle.x < 180)
@@ -107,7 +107,7 @@ public class sensitivity: MonoBehaviour
             localAngle.x = minLimit;
         localAngle.y += x_Rotation;
         camera.transform.localEulerAngles = localAngle;
-        //YŽ²‰ñ“]
+        //YÅ½Â²â€°Ã±â€œ]
       /*  var angle = this.transform.eulerAngles;
         angle.y += x_Rotation;
         transform.eulerAngles = angle;*/
