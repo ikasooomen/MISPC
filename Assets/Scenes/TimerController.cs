@@ -77,11 +77,6 @@ public class TimerController : MonoBehaviour
 
 	}
 
-	public void ChangeTitleSceneTimer()
-	{
-		SceneManager.LoadScene("TitleScene");
-	}
-
 	private  IEnumerator gameOver()
 	{
 		score_text.text = "Game Over";

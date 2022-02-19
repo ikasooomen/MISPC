@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &463147 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2556214089736824443, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
-  m_PrefabInstance: {fileID: 823471675}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &79668610
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89f7c67d57032484fa92578a5822b309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settingPanel: {fileID: 463147}
+  settingPanel: {fileID: 722938756}
   camera: {fileID: 1560120335}
   dropdown: {fileID: 0}
 --- !u!4 &79668612
@@ -298,11 +293,6 @@ Transform:
   m_Father: {fileID: 1436417553}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!224 &171544358 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5477999907230807466, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
-  m_PrefabInstance: {fileID: 823471675}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &235791929
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,6 +579,11 @@ Transform:
   m_Father: {fileID: 1434128393}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &722938756 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7779116432317268707, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
+  m_PrefabInstance: {fileID: 823471675}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &741147406
 GameObject:
   m_ObjectHideFlags: 0
@@ -834,6 +829,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7779116430396776143, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
+      propertyPath: Camera
+      value: 
+      objectReference: {fileID: 1560120337}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
 --- !u!1 &943010267
@@ -1165,7 +1164,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 741388942}
-  - {fileID: 171544358}
+  - {fileID: 2042486583}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1694,6 +1693,11 @@ Transform:
   m_Father: {fileID: 1434128393}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &2042486583 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7779116431817105110, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
+  m_PrefabInstance: {fileID: 823471675}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2046658237
 GameObject:
   m_ObjectHideFlags: 0
