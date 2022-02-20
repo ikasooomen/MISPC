@@ -1402,6 +1402,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &851284107 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5566787948217790401, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
+  m_PrefabInstance: {fileID: 2556214089321423694}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d0b652f32a2cc243917e4028fa0f046, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &900178894
 GameObject:
   m_ObjectHideFlags: 0
@@ -2746,6 +2757,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c02238decb5a58429cfa52532358da7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2100116604 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7325505159350456721, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
+  m_PrefabInstance: {fileID: 2556214089321423694}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d199490a83bb2b844b9695cbf13b01ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2142032782
 GameObject:
   m_ObjectHideFlags: 0
@@ -2973,6 +2995,10 @@ PrefabInstance:
       propertyPath: Camera
       value: 
       objectReference: {fileID: 2145772086}
+    - target: {fileID: 2556214088335849507, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
+      propertyPath: gamedropdown
+      value: 
+      objectReference: {fileID: 851284107}
     - target: {fileID: 2556214088524670670, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
       propertyPath: m_Name
       value: SettingUI
@@ -3037,6 +3063,10 @@ PrefabInstance:
       propertyPath: Camera
       value: 
       objectReference: {fileID: 2145772086}
+    - target: {fileID: 2861316570573476094, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
+      propertyPath: inputDPI
+      value: 
+      objectReference: {fileID: 2100116604}
     - target: {fileID: 2891118448375737785, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.5

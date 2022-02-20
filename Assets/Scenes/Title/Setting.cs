@@ -14,6 +14,7 @@ public class Setting : MonoBehaviour
     [SerializeField] private Dropdown dropdown;//DropdownÇäiî[Ç∑ÇÈïœêî
     [SerializeField] private Camera Camera;
     [SerializeField] private Dropdown fovdropdown;
+    [SerializeField] private Dropdown gamedropdown;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +22,8 @@ public class Setting : MonoBehaviour
         Screen.SetResolution(1920, 1080, true, 60);
 
         if (!PlayerPrefs.HasKey("FOV")) PlayerPrefs.SetFloat("FOV", 2);
-        
+        if (!PlayerPrefs.HasKey("game")) PlayerPrefs.SetFloat("game", 0);
+
         if (PlayerPrefs.GetFloat("FOV") == 0)
         {
             Camera.fieldOfView = 90;
@@ -38,6 +40,14 @@ public class Setting : MonoBehaviour
             fovdropdown.value = 2;
         }
 
+        if (PlayerPrefs.GetFloat("game") == 0)
+        {
+            gamedropdown.value = 0;
+        }
+        else if (PlayerPrefs.GetFloat("game") == 1)
+        {
+            gamedropdown.value = 1;
+        }
     }
 
     // Update is called once per frame
@@ -138,4 +148,16 @@ public class Setting : MonoBehaviour
 
     }
 
+    public void game()
+    {
+        if (gamedropdown.value == 0)
+        {
+            PlayerPrefs.SetFloat("game", 0);
+        }
+        else if (gamedropdown.value == 1)
+        {
+            PlayerPrefs.SetFloat("game", 1);
+        }
+
+    }
 }

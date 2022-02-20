@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &463147 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2556214089736824443, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
-  m_PrefabInstance: {fileID: 823471675}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &79668610
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89f7c67d57032484fa92578a5822b309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settingPanel: {fileID: 463147}
   camera: {fileID: 1560120335}
   dropdown: {fileID: 0}
 --- !u!4 &79668612
@@ -494,6 +488,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &392136838 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5566787948217790401, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
+  m_PrefabInstance: {fileID: 823471675}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d0b652f32a2cc243917e4028fa0f046, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &565050184
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,6 +775,10 @@ PrefabInstance:
       propertyPath: Camera
       value: 
       objectReference: {fileID: 1560120337}
+    - target: {fileID: 2556214088335849507, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
+      propertyPath: gamedropdown
+      value: 
+      objectReference: {fileID: 392136838}
     - target: {fileID: 2556214088524670670, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
       propertyPath: m_Name
       value: SettingUI
@@ -830,12 +839,27 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 79668610}
+    - target: {fileID: 2861316570573476094, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
+      propertyPath: inputDPI
+      value: 
+      objectReference: {fileID: 823471676}
     - target: {fileID: 5477999907230807466, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
+--- !u!114 &823471676 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7325505159350456721, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
+  m_PrefabInstance: {fileID: 823471675}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d199490a83bb2b844b9695cbf13b01ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &943010267
 GameObject:
   m_ObjectHideFlags: 0
