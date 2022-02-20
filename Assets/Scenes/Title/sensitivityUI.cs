@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class sensitivityUI : MonoBehaviour
 {
     public Slider sensitivitybar;
-    public InputField input;   
-    
+    public InputField input;
+    public InputField inputDPI;
+
     void Start()
     {
         if (!PlayerPrefs.HasKey("sensi1"))
@@ -15,8 +16,15 @@ public class sensitivityUI : MonoBehaviour
             PlayerPrefs.SetFloat("sensi1", 3);
         }
 
+        if (!PlayerPrefs.HasKey("dpi"))
+        {
+            PlayerPrefs.SetFloat("dpi", 800);
+        }
+
         sensitivitybar = sensitivitybar.GetComponent<Slider>();
         input = input.GetComponent<InputField>();
+        inputDPI = inputDPI.GetComponent<InputField>();
+        inputDPI.text = PlayerPrefs.GetFloat("dpi").ToString();
 
         float maxHp = 10f;
         float nowHp = PlayerPrefs.GetFloat("sensi1");
@@ -52,5 +60,14 @@ public class sensitivityUI : MonoBehaviour
 
     }
 
+    public void ValueInputDPI()
+    {
+        float num = float.Parse(inputDPI.text);
+        if (num > 20000f) num = 20000f;
+        else if (num < 100f) num = 100f;
+        PlayerPrefs.SetFloat("dpi", num);
 
+        inputDPI.text = PlayerPrefs.GetFloat("dpi").ToString();
+
+    }
 }
