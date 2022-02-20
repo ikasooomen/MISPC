@@ -7,6 +7,7 @@ public class shoot : MonoBehaviour
     public LayerMask layerMask;
     public QueryTriggerInteraction queryTriggerInteraction;
     GameObject scoreObject;
+    int stk = -1;
 
     void Start()
     {
@@ -23,8 +24,13 @@ public class shoot : MonoBehaviour
              {
                 if (hit.collider.gameObject.tag == "Bullet"|| hit.collider.gameObject.tag == "Bullet2")
                 {
-                    scoreObject.GetComponent<CountText>().AddScore();
+                    stk++;
+                    scoreObject.GetComponent<CountText>().AddScore(stk);
                     Destroy(hit.collider.gameObject);
+                }
+                else
+                {
+                    stk = -1;
                 }
             }
 

@@ -59,6 +59,7 @@ public class Setting : MonoBehaviour
             {
                 if (SceneManager.GetActiveScene().name != "TitleScene")
                 { // TitleSceneÇ≈ÇÃÇ›Ç‚ÇËÇΩÇ¢èàóù
+                    Time.timeScale = 1.0f;
                     Cursor.visible = false;
                     Cursor.lockState = CursorLockMode.Locked;
                 }
@@ -66,6 +67,7 @@ public class Setting : MonoBehaviour
             }
             else
             {
+                Time.timeScale = 0;
                 settingPanel.SetActive(true);
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;

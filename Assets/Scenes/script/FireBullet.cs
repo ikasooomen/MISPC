@@ -29,20 +29,26 @@ public class FireBullet : MonoBehaviour
     public float tmpTime = 0;
 
     private bool start = false;
-
+    float doubletamatama = 45f;
     float startcooldown = 6f;
+    int doubletamatamacount = 0;
     // Update is called once per frame
     void Update()
     {
         tmpTime += Time.deltaTime;
         startcooldown -= Time.deltaTime;
-        if (startcooldown <= 1f) start = true;
+        doubletamatama-= Time.deltaTime;
 
+        if (startcooldown <= 1f) start = true;
         if (start==true&&tmpTime >= interval)
         {
 
             LauncherShot();
-
+            doubletamatamacount++;
+            if (doubletamatama < 0&& doubletamatamacount%2==0)
+            {
+                LauncherShot();
+            }
             tmpTime = 0;
         }
 
