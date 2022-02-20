@@ -8,9 +8,9 @@ public class CountText : MonoBehaviour
     int score = 0;
     public Text scoreText;
 
-    public void AddScore()
+    public void AddScore(int plusScore)
     {
-        score++;
+        score+= plusScore+1;
     }
 
     void Update()
