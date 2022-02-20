@@ -20,6 +20,11 @@ public class sensitivityUI : MonoBehaviour
             PlayerPrefs.SetFloat("DPI", 800);
         }
 
+        if (!PlayerPrefs.HasKey("dpi"))
+        {
+            PlayerPrefs.SetFloat("dpi", 800);
+        }
+
         sensitivitybar = sensitivitybar.GetComponent<Slider>();
         input = input.GetComponent<InputField>();
         inputDPI = inputDPI.GetComponent<InputField>();
@@ -28,10 +33,11 @@ public class sensitivityUI : MonoBehaviour
         float maxHp = 10f;
         float nowHp = PlayerPrefs.GetFloat("sensi1");
         Debug.Log(nowHp);
+        Debug.Log(PlayerPrefs.GetFloat("dpi"));
 
         input.placeholder.GetComponent<Text>().text = nowHp.ToString();
-        sensitivitybar.maxValue = maxHp;//ƒXƒ‰ƒCƒ_[‚ÌÅ‘å’l‚ÌÝ’è
-        sensitivitybar.value = nowHp;//ƒXƒ‰ƒCƒ_[‚ÌŒ»Ý’l‚ÌÝ’è
+        sensitivitybar.maxValue = maxHp;//ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã®æœ€å¤§å€¤ã®è¨­å®š
+        sensitivitybar.value = nowHp;//ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã®ç¾åœ¨å€¤ã®è¨­å®š
     }
 
     void Update()
@@ -50,8 +56,8 @@ public class sensitivityUI : MonoBehaviour
     public void ValueInput()
     {
         float num = float.Parse(input.text);
-        if (num > 10) num = 10;
-        else if (num < 0) num = 0;
+        if (num > 10f) num = 10f;
+        else if (num < 0f) num = 0.2f;
         PlayerPrefs.SetFloat("sensi1",num);
 
         input.text = num.ToString();

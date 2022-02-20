@@ -496,6 +496,7 @@ RectTransform:
   - {fileID: 80752164}
   - {fileID: 552743526}
   - {fileID: 490046615}
+  - {fileID: 343442367}
   - {fileID: 2063004243}
   - {fileID: 1445583732}
   m_Father: {fileID: 0}
@@ -585,7 +586,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 181460657}
   m_CullTransparentMesh: 1
---- !u!1 &198740494
+--- !u!224 &343442367 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7779116431817105110, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
+  m_PrefabInstance: {fileID: 2556214089321423694}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &490046614
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -747,6 +753,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Setting, Assembly-CSharp
+        m_MethodName: Esc
       - m_Target: {fileID: 1597229481}
         m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
         m_MethodName: OnClick_OpenRoomPanelButton
@@ -2991,6 +3000,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 129484205}
     m_Modifications:
+    - target: {fileID: 465857414, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -110
+      objectReference: {fileID: 0}
+    - target: {fileID: 1683087585, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -110
+      objectReference: {fileID: 0}
     - target: {fileID: 2556214088335849507, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
       propertyPath: Camera
       value: 
@@ -3090,6 +3107,18 @@ PrefabInstance:
     - target: {fileID: 6984246543611656198, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7779116430396776143, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
+      propertyPath: Camera
+      value: 
+      objectReference: {fileID: 2145772086}
+    - target: {fileID: 7917833780714424178, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597501345346538264, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}

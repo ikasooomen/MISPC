@@ -25,7 +25,6 @@ public class sensitivity: MonoBehaviour
             hipfire = 180 / (PlayerPrefs.GetFloat("DPI") * 0.07f * PlayerPrefs.GetFloat("sensi1")) * 2.54f;
         }
         perdeg = 1 / (((hipfire / 180) / 2.54f) * dpi);
-
         camera = GameObject.Find("PlayerCamera");
         //camera.transform.parent = transform;
     }
@@ -43,8 +42,6 @@ public class sensitivity: MonoBehaviour
         perdeg = 1 / (((hipfire / 180) / 2.54f) * dpi);
 
         cameracon();
-        
-        
     }
 
     void cameracon()
@@ -53,7 +50,7 @@ public class sensitivity: MonoBehaviour
         float y_Rotation = Input.GetAxis("Mouse Y") * 17.5f / 7f * -perdeg;
         float maxLimit = 85, minLimit = 0;
         minLimit = 360 - maxLimit;
-        //XŽ²‰ñ“]
+        //Xè»¸å›žè»¢
         var localAngle = camera.transform.localEulerAngles;
         localAngle.x += y_Rotation;
         if (localAngle.x > maxLimit && localAngle.x < 180)
@@ -61,7 +58,7 @@ public class sensitivity: MonoBehaviour
         if (localAngle.x < minLimit && localAngle.x > 180)
             localAngle.x = minLimit;
         camera.transform.localEulerAngles = localAngle;
-        //YŽ²‰ñ“]
+        //Yè»¸å›žè»¢
         var angle = camera.transform.eulerAngles;
         angle.y += x_Rotation;
         camera.transform.eulerAngles = angle;

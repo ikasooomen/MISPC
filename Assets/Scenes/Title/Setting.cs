@@ -11,7 +11,7 @@ public class Setting : MonoBehaviour
     public GameObject subPanel1;
     public Text maintext;
     public Text subtext;
-    [SerializeField] private Dropdown dropdown;//Dropdown‚ğŠi”[‚·‚é•Ï”
+    [SerializeField] private Dropdown dropdown;//Dropdownã‚’æ ¼ç´ã™ã‚‹å¤‰æ•°
     [SerializeField] private Camera Camera;
     [SerializeField] private Dropdown fovdropdown;
     [SerializeField] private Dropdown gamedropdown;
@@ -58,7 +58,7 @@ public class Setting : MonoBehaviour
             if (settingPanel.activeSelf)
             {
                 if (SceneManager.GetActiveScene().name != "TitleScene")
-                { // TitleScene‚Å‚Ì‚İ‚â‚è‚½‚¢ˆ—
+                { // TitleSceneã§ã®ã¿ã‚„ã‚ŠãŸã„å‡¦ç†
                     Cursor.visible = false;
                     Cursor.lockState = CursorLockMode.Locked;
                 }
