@@ -2969,6 +2969,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 129484205}
     m_Modifications:
+    - target: {fileID: 465857413, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2556214088335849507, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
       propertyPath: Camera
       value: 
@@ -2979,7 +2983,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2556214088524670670, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2556214088524670671, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
       propertyPath: m_RootOrder
@@ -3031,7 +3035,7 @@ PrefabInstance:
       objectReference: {fileID: 2145772086}
     - target: {fileID: 2556214089736824443, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2556214090415477471, guid: 927144bedfc6cf14da42efde699a6d45, type: 3}
       propertyPath: Camera
