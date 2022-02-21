@@ -17,8 +17,8 @@ public class TimerController : MonoBehaviour
 
 
 	public Text gametimerText;
-	public float gameTime;
-	int gamesec;
+	public float gameTime = 70f;
+	int gamesec = 70;
 
 	float cnt = 2f;
 	float cnt_2 = 2f;
