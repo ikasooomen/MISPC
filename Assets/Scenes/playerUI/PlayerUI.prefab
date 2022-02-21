@@ -132,6 +132,13 @@ MonoBehaviour:
   scoreText: {fileID: 6195813677842327966}
   Hitrate: {fileID: 8105715924296572724}
   rate: 0
+  StartTimer_object: {fileID: 5891927547354541259}
+  PlayTimer_object: {fileID: 7641285711139494056}
+  timerText: {fileID: 9062563796427953534}
+  totalTime: 4
+  seconds: 0
+  gametimerText: {fileID: 1094653860315408179}
+  gameTime: 70
 --- !u!1 &2525795189782749645
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,7 +620,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -31.6, y: -36.7}
+  m_AnchoredPosition: {x: -31.599976, y: -36.700012}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5485295104735790694
@@ -657,4 +664,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: "\u6B8B\u308A 70 \u79D2"
