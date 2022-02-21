@@ -30,8 +30,8 @@ public class shoot : MonoBehaviour
                     stk++;
                     hitHantei = true;
                     scoreObject.GetComponent<CountText>().AddScore(stk);
-                    AudioSource.PlayClipAtPoint(SE, transform.position);
                     Destroy(hit.collider.gameObject);
+                    AudioSource.PlayClipAtPoint(SE, transform.position);
                 }
                 else
                 {
