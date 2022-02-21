@@ -36,14 +36,14 @@ public class EDamage : MonoBehaviour
 			}
 
 
-			if (this.tag == "Bullet2" && collision.gameObject.name == "AH_p1")
+			if (this.tag == "Bullet" && collision.gameObject.name == "AH_p1")
 			{
 				float dmg = 1f;
 				Destroy(gameObject);
 				EStatus.Instance.TakeDamage(dmg);
 			}
 
-			else if (this.tag == "Bullet" && collision.gameObject.name == "AH_p2")
+			else if (this.tag == "Bullet2" && collision.gameObject.name == "AH_p2")
 			{
 				float dmg = 1f;
 				Destroy(gameObject);

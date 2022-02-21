@@ -92,6 +92,10 @@ public class FireBullet : MonoBehaviour
         {
             newBall.name = "bullet_player1";
         }
+        if (firingPoint.name == "player2(Clone)")
+        {
+            newBall.name = "bullet_player1";
+        }
 
         else
         {

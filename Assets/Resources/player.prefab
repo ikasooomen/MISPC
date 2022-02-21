@@ -260,6 +260,7 @@ MonoBehaviour:
   health: 6
   maxHealth: 6
   maxTotalHealth: 6
+  WL: {fileID: 0}
 --- !u!114 &6416599886988217340
 MonoBehaviour:
   m_ObjectHideFlags: 0
