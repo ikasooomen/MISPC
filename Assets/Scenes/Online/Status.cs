@@ -1,4 +1,8 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using Photon.Pun;
 
 public class Status : MonoBehaviour
 {
@@ -60,5 +64,42 @@ public class Status : MonoBehaviour
 
         if (onHealthChangedCallback != null)
             onHealthChangedCallback.Invoke();
+    }
+
+    GameObject Text;
+    public Text WL;
+    int flag = 0;
+    private void Start()
+    {
+        Text = GameObject.Find("WL");
+        WL = Text.GetComponent<Text>();
+        WL.text = "";
+        flag = 0;
+    }
+
+    private void Update()
+    {
+        if (flag == 0)
+        {
+            if (Status.Instance.Health == 0)
+            {
+                flag = 1;
+                WL.text = "LOSE";
+                StartCoroutine(Timer());
+            }
+            else if (EStatus.Instance.Health == 0)
+            {
+                flag = 1;
+                WL.text = "WIN";
+                StartCoroutine(Timer());
+            }
+        }
+    }
+
+    IEnumerator Timer()
+    {
+        //3•b‘Ò‚Â
+        yield return new WaitForSeconds(5.0f);
+        SceneManager.LoadScene("TitleScene");
     }
 }

@@ -16,6 +16,8 @@ public class Health : MonoBehaviour
     int Flag = 0;
     GameObject objGet;
 
+    Text WL;
+
     private void Update()
     {
         if (Flag == 0) {
