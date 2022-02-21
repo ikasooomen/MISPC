@@ -9,6 +9,7 @@ public class shoot : MonoBehaviour
     GameObject scoreObject;
     int stk = -1;
     bool hitHantei = false;
+    public AudioClip SE;
 
     void Start()
     {
@@ -29,6 +30,7 @@ public class shoot : MonoBehaviour
                     stk++;
                     hitHantei = true;
                     scoreObject.GetComponent<CountText>().AddScore(stk);
+                    AudioSource.PlayClipAtPoint(SE, transform.position);
                     Destroy(hit.collider.gameObject);
                 }
                 else
