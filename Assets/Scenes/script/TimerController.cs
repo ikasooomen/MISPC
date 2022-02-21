@@ -91,7 +91,8 @@ public class TimerController : MonoBehaviour
 		score_text.text = "ƒ^ƒCƒgƒ‹‚É–ß‚è‚Ü‚·";
 
 		yield return new WaitForSeconds(2.0f);
-
+		Cursor.visible = true;
+		Cursor.lockState = CursorLockMode.None;
 		SceneManager.LoadScene("TitleScene");
 	}
 
