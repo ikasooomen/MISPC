@@ -92,8 +92,6 @@ public class TimerController : MonoBehaviour
 
 		yield return new WaitForSeconds(2.0f);
 
-		Cursor.visible = true;
-		Cursor.lockState = CursorLockMode.None;
 		SceneManager.LoadScene("TitleScene");
 	}
 
