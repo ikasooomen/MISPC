@@ -107,7 +107,7 @@ public class CountText : MonoBehaviour
 
     private IEnumerator gameOver()
     {
-
+        if (gamesec < 0) gamesec = 0;
         resultObject.GetComponent<ResultSetting>().getScore(score.ToString());
         resultObject.GetComponent<ResultSetting>().getTime((70-gamesec).ToString());
         resultObject.GetComponent<ResultSetting>().getHitRate(HitRateStr);
