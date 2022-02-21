@@ -27,6 +27,7 @@ public class CountText : MonoBehaviour
     public Text gametimerText;
     public float gameTime = 70f;
     int gamesec;
+    string HitRateStr;
 
     float cnt = 2f;
     float cnt_2 = 2f;
@@ -36,10 +37,15 @@ public class CountText : MonoBehaviour
 
     bool hpcheck = true;
 
+    GameObject resultObject;
+
     void Start()
     {
         score_text = StartTimer_object.GetComponent<Text>();
         game_text = PlayTimer_object.GetComponent<Text>();
+
+        resultObject = GameObject.Find("ResultController");
+        if (!PlayerPrefs.HasKey("gameEnd")) PlayerPrefs.SetFloat("gameEnd", 0);
     }
     public void AddScore(int plusScore)
     {
@@ -95,21 +101,27 @@ public class CountText : MonoBehaviour
         }
 
         scoreText.text = "SCORE: " + score.ToString();
-        string HitRateStr = rate.ToString("F1");
+        HitRateStr = rate.ToString("F1");
         Hitrate.text = HitRateStr + "%";
     }
 
     private IEnumerator gameOver()
     {
+
+        resultObject.GetComponent<ResultSetting>().getScore(score.ToString());
+        resultObject.GetComponent<ResultSetting>().getTime((70-gamesec).ToString());
+        resultObject.GetComponent<ResultSetting>().getHitRate(HitRateStr);
+
         score_text.text = "Game Over";
 
         yield return new WaitForSeconds(2.0f);
 
-        score_text.text = "タイトルに戻ります";
+        PlayerPrefs.SetFloat("gameEnd", 1);
+        /*score_text.text = "タイトルに戻ります";
 
         yield return new WaitForSeconds(2.0f);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-        SceneManager.LoadScene("TitleScene");
+        SceneManager.LoadScene("TitleScene");*/
     }
 }
