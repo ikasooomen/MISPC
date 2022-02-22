@@ -29,7 +29,7 @@ public class Damage : MonoBehaviour
 
 		if (tama_red == true || tama_blue == true)
 		{
-			if (collision.gameObject.tag == "Bullet2" || collision.gameObject.tag == "Bullet" || collision.gameObject.tag == "prpr")
+			if (collision.gameObject.tag == "Bullet2" || collision.gameObject.tag == "Bullet")
 			{
 
 				Destroy(gameObject);
@@ -60,7 +60,7 @@ public class Damage : MonoBehaviour
 		if (tama_timer >= 0.8f && this.tag == "Bullet" && tama_red == false)
 		{
 
-			GetComponent<Renderer>().material.color = new Color32(255, 0, 0, 255);
+			GetComponent<Renderer>().material.color = new Color32(218, 0, 27, 255);
 
 			tama_red = true;
 			this.tag = "Bullet";
@@ -69,7 +69,7 @@ public class Damage : MonoBehaviour
 		if (tama_timer >= 0.8f && this.tag == "Bullet2" && tama_blue == false)
 		{
 
-			GetComponent<Renderer>().material.color = new Color32(0, 0, 255, 255);
+			GetComponent<Renderer>().material.color = new Color32(241, 224, 17, 255);
 
 			tama_blue = true;
 			this.tag = "Bullet2";
