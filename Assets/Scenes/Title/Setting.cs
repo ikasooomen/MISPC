@@ -85,6 +85,7 @@ public class Setting : MonoBehaviour
 
     public void Endgame()
     {
+        PlayerPrefs.SetFloat("gameEnd", 0);
         Application.Quit();
     }
 
@@ -126,6 +127,8 @@ public class Setting : MonoBehaviour
 
     public void TitleBack()
     {
+        Time.timeScale = 1.0f;
+        PlayerPrefs.SetFloat("gameEnd", 0);
         settingPanel.SetActive(false);
         SceneManager.LoadScene("TitleScene");
     }
