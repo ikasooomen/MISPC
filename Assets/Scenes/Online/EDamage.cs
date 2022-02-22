@@ -40,7 +40,7 @@ public class EDamage : MonoBehaviour
 			{
 				float dmg = 0.5f;
 				Destroy(gameObject);
-				EStatus.Instance.TakeDamage(dmg);
+				Status.Instance.TakeDamage(dmg);
 			}
 
 			else if (this.tag == "Bullet2" && collision.gameObject.name == "AH_p2")

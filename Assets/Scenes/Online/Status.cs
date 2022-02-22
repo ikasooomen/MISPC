@@ -101,19 +101,22 @@ public class Status : MonoBehaviourPunCallbacks, IPunObservable
 
     private void Update()
     {
-        if (flag == 0)
+        if (photonView.IsMine)
         {
-            if (Status.Instance.Health == 0)
+            if (flag == 0)
             {
-                flag = 1;
-                WL.text = "LOSE";
-                StartCoroutine(Timer());
-            }
-            else if (EStatus.Instance.Health == 0)
-            {
-                flag = 1;
-                WL.text = "WIN";
-                StartCoroutine(Timer());
+                if (Status.Instance.Health == 0)
+                {
+                    flag = 1;
+                    WL.text = "LOSE";
+                    StartCoroutine(Timer());
+                }
+                else if (EStatus.Instance.Health == 0)
+                {
+                    flag = 1;
+                    WL.text = "WIN";
+                    StartCoroutine(Timer());
+                }
             }
         }
         objGet = GameObject.Find("player2(Clone)");

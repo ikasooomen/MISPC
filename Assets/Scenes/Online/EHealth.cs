@@ -88,11 +88,11 @@ public class EHealth : MonoBehaviour
             GameObject temp = Instantiate(heartContainerPrefab);
             if (PhotonNetwork.IsMasterClient)
             {
-                temp.transform.SetParent(heartsParentr, false);
+                temp.transform.SetParent(heartsParentl, false);
             }
             else
             {
-                temp.transform.SetParent(heartsParentl, false);
+                temp.transform.SetParent(heartsParentr, false);
             }
 
             heartContainers[i] = temp;

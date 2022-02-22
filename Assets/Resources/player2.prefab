@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8274072462689033214}
   - component: {fileID: 6863250325483101387}
   m_Layer: 0
-  m_Name: AH_p1
+  m_Name: AH_p2
   m_TagString: ATARIHANTEI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
