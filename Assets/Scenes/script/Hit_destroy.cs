@@ -29,7 +29,7 @@ public class Hit_destroy : MonoBehaviour
 
 		if (tama_red == true||tama_blue==true)
 		{
-			if (collision.gameObject.tag == "Bullet2" || collision.gameObject.tag == "Bullet" || collision.gameObject.tag == "prpr")
+			if (collision.gameObject.tag == "Bullet2" || collision.gameObject.tag == "Bullet")
 			{
 
 				Destroy(gameObject);
