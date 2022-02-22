@@ -60,7 +60,7 @@ public class Hit_destroy : MonoBehaviour
         if (tama_timer >= 0.8f && this.name== "bullet_player1" && tama_red == false)
         {
 			
-			GetComponent<Renderer>().material.color = new Color32(255,0,0,255);
+			GetComponent<Renderer>().material.color = new Color32(218,0,27,255);
 
 			tama_red = true;
 			this.tag = "Bullet";
@@ -69,7 +69,7 @@ public class Hit_destroy : MonoBehaviour
 		if (tama_timer >= 0.8f && this.name == "bullet_player2" && tama_blue == false)
 		{
 
-			GetComponent<Renderer>().material.color = new Color32(0, 0, 255, 255);
+			GetComponent<Renderer>().material.color = new Color32(241, 224, 17, 255);
 
 			tama_blue = true;
 			this.tag = "Bullet2";

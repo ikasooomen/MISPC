@@ -36,6 +36,7 @@ public class CountText : MonoBehaviour
     public static Text game_text;
 
     bool hpcheck = true;
+    bool SC = false;
 
     GameObject resultObject;
 
@@ -47,17 +48,21 @@ public class CountText : MonoBehaviour
         resultObject = GameObject.Find("ResultController");
         if (!PlayerPrefs.HasKey("gameEnd")) PlayerPrefs.SetFloat("gameEnd", 0);
     }
-    public void AddScore(int plusScore)
+    public void AddScore(float plusScore)
     {
-        score+= plusScore+1;
+        score+= (int)plusScore+100;
     }
 
     public void NewHitrate(bool ck)
     {
-        shootCount++;
-        if (ck) hitCount++;
-        rate = (hitCount / shootCount)*100f;
+            shootCount++;
+            if (ck) hitCount++;
+            rate = (hitCount / shootCount) * 100f;
+    }
 
+    public bool StartChecker()
+    {
+        return SC;
     }
 
     void Update()
@@ -77,6 +82,7 @@ public class CountText : MonoBehaviour
             if (seconds == 0)
             {
                 score_text.text = "GO!";
+                SC = true;
             }
             else if (totalTime < -0.3f)
             {
@@ -107,6 +113,7 @@ public class CountText : MonoBehaviour
 
     private IEnumerator gameOver()
     {
+        SC = false;
         if (gamesec < 0) gamesec = 0;
         resultObject.GetComponent<ResultSetting>().getScore(score.ToString());
         resultObject.GetComponent<ResultSetting>().getTime((70-gamesec).ToString());
