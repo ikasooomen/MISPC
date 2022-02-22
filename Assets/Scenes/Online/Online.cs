@@ -52,6 +52,11 @@ public class Online : MonoBehaviourPunCallbacks
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
         Debug.Log("OnPlayerLeftRoom");
+        Time.timeScale = 1.0f;
+        PlayerPrefs.SetFloat("gameEnd", 0);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        SceneManager.LoadScene("TitleScene");
     }
 
 }
