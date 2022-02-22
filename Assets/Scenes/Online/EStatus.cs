@@ -98,11 +98,11 @@ public class EStatus : MonoBehaviourPunCallbacks, IPunObservable
     }
 
     GameObject objGet;
-
+    float totalTime = 3;
+    int seconds;
     private void Update()
     {
-        float totalTime = 3;
-        int seconds;
+
         totalTime -= Time.deltaTime;
         seconds = (int)totalTime;
 

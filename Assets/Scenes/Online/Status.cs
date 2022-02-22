@@ -90,6 +90,8 @@ public class Status : MonoBehaviourPunCallbacks, IPunObservable
     GameObject Text;
     public Text WL;
     int flag = 0;
+    float totalTime = 3;
+    int seconds;
     private void Start()
     {
         Text = GameObject.Find("WL");
@@ -102,8 +104,6 @@ public class Status : MonoBehaviourPunCallbacks, IPunObservable
 
     private void Update()
     {
-        float totalTime = 3;
-        int seconds;
         totalTime -= Time.deltaTime;
         seconds = (int)totalTime;
 
