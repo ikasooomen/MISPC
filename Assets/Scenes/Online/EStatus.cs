@@ -141,9 +141,7 @@ public class EStatus : MonoBehaviourPunCallbacks, IPunObservable
     IEnumerator Timer()
     {
         //3•b‘Ò‚Â
-        yield return new WaitForSeconds(5.0f);
-        PhotonNetwork.LeaveRoom();
-        PhotonNetwork.LeaveLobby();
+        yield return new WaitForSeconds(2.0f);
         PhotonNetwork.Disconnect();
     }
     void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)

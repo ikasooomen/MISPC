@@ -1,8 +1,9 @@
+using ExitGames.Client.Photon;
 using Photon.Pun;
-using System.Collections;
+using Photon.Realtime;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Online : MonoBehaviourPunCallbacks
 {
@@ -37,4 +38,20 @@ public class Online : MonoBehaviourPunCallbacks
         playercamera.transform.rotation = Quaternion.Euler(r);
 
     }
+    public override void OnDisconnected(DisconnectCause cause)
+    {
+        Debug.Log("OnDisconnected");
+        Time.timeScale = 1.0f;
+        PlayerPrefs.SetFloat("gameEnd", 0);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        SceneManager.LoadScene("TitleScene");
+    }
+
+    // ëºÇÃÉvÉåÉCÉÑÅ[Ç™ëﬁé∫ÇµÇΩéû
+    public override void OnPlayerLeftRoom(Player otherPlayer)
+    {
+        Debug.Log("OnPlayerLeftRoom");
+    }
+
 }
