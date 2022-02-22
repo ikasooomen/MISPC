@@ -102,24 +102,34 @@ public class Status : MonoBehaviourPunCallbacks, IPunObservable
 
     private void Update()
     {
-        if (photonView.IsMine)
+        float totalTime = 3;
+        int seconds;
+        totalTime -= Time.deltaTime;
+        seconds = (int)totalTime;
+
+        if(seconds <= 0)
         {
-            if (flag == 0)
+            if (photonView.IsMine)
             {
-                if (Status.Instance.Health == 0)
+
+                if (flag == 0)
                 {
-                    flag = 1;
-                    WL.text = "LOSE";
-                    StartCoroutine(Timer());
-                }
-                else if (EStatus.Instance.Health == 0)
-                {
-                    flag = 1;
-                    WL.text = "WIN";
-                    StartCoroutine(Timer());
+                    if (Status.Instance.Health == 0)
+                    {
+                        flag = 1;
+                        WL.text = "LOSE";
+                        StartCoroutine(Timer());
+                    }
+                    else if (EStatus.Instance.Health == 0)
+                    {
+                        flag = 1;
+                        WL.text = "WIN";
+                        StartCoroutine(Timer());
+                    }
                 }
             }
         }
+
         objGet = GameObject.Find("player2(Clone)");
 
         if (objGet != null) {
@@ -135,7 +145,6 @@ public class Status : MonoBehaviourPunCallbacks, IPunObservable
         PhotonNetwork.LeaveRoom();
         PhotonNetwork.LeaveLobby();
         PhotonNetwork.Disconnect();
-        SceneManager.LoadScene("TitleScene");
     }
     void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
@@ -148,5 +157,21 @@ public class Status : MonoBehaviourPunCallbacks, IPunObservable
             Health = (float)stream.ReceiveNext();
             Debug.Log(Health);
         }
+    }
+
+    public override void OnLeftRoom()
+    {
+        Debug.Log("ルームから退出しました");
+    }
+
+    public override void OnLeftLobby()
+    {
+        Debug.Log("ロビーから退出しました");
+    }
+
+    public override void OnDisconnected(DisconnectCause cause)
+    {
+        Debug.Log($"サーバーとの接続が切断されました: {cause.ToString()}");
+        SceneManager.LoadScene("TitleScene");
     }
 }
