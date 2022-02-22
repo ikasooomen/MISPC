@@ -9,7 +9,12 @@ public class gun : MonoBehaviourPunCallbacks, IPunObservable
     public QueryTriggerInteraction queryTriggerInteraction;
     public string Oname;
     GameObject dest;
+    private AudioSource sound01;
 
+    void Start()
+    {
+        sound01 = GetComponent<AudioSource>();
+    }
     void Update()
     {
         if (photonView.IsMine)
@@ -25,6 +30,7 @@ public class gun : MonoBehaviourPunCallbacks, IPunObservable
                     {
                         Debug.Log("darudaru2");
                         Oname = hit.collider.gameObject.name;
+                        sound01.PlayOneShot(sound01.clip);
                         Destroy(hit.collider.gameObject);
                     }
                 }
