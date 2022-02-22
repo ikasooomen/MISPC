@@ -97,7 +97,7 @@ public class CountText : MonoBehaviour
         {
             gameTime -= Time.deltaTime;
             gamesec = (int)gameTime;
-            game_text.text = "Žc‚è " + gamesec + " •b";
+            game_text.text =gamesec/60+":" +(gamesec%60).ToString("D2");
 
             if (gamesec < 0)
             {
