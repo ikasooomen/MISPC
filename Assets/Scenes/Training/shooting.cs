@@ -7,6 +7,12 @@ public class shooting : MonoBehaviour
 
     public LayerMask layerMask;
     public QueryTriggerInteraction queryTriggerInteraction;
+    public AudioClip se2;
+    AudioSource audiosource2;
+    void Start()
+    {
+        audiosource2 = GetComponent<AudioSource>();
+    }
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -17,6 +23,7 @@ public class shooting : MonoBehaviour
             if (Physics.Raycast(ray, out hit,10000.0f , layerMask, queryTriggerInteraction))
             {
                 if (hit.collider.gameObject.tag == "Target") {
+                    audiosource2.PlayOneShot(se2);
                     hit.collider.GetComponent<training>().Break();
                     //Debug.Log(hit.collider.gameObject.transform.position);
                 }
