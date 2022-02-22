@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Photon.Pun;
 
-public class Status : MonoBehaviour
+public class Status : MonoBehaviourPunCallbacks, IPunObservable
 {
     public delegate void OnHealthChangedDelegate();
     public OnHealthChangedDelegate onHealthChangedCallback;
@@ -30,7 +30,17 @@ public class Status : MonoBehaviour
     [SerializeField]
     private float maxTotalHealth;
 
-    public float Health { get { return health; } }
+
+    public float Health {
+        get 
+        { 
+            return health; 
+        }
+        set
+        {
+            health = value;
+        }
+    }
     public float MaxHealth { get { return maxHealth; } }
     public float MaxTotalHealth { get { return maxTotalHealth; } }
 
@@ -42,8 +52,18 @@ public class Status : MonoBehaviour
 
     public void TakeDamage(float dmg)
     {
-        health -= dmg;
-        ClampHealth();
+        if (PhotonNetwork.IsMasterClient)
+        {
+            health -= dmg;
+            ClampHealth();
+            Debug.Log("Status");
+        }
+        else
+        {
+            ClampHealth();
+            Debug.Log("!Status");
+        }
+       
     }
 
     public void AddHealth()
@@ -77,6 +97,8 @@ public class Status : MonoBehaviour
         flag = 0;
     }
 
+    GameObject objGet;
+
     private void Update()
     {
         if (flag == 0)
@@ -94,6 +116,12 @@ public class Status : MonoBehaviour
                 StartCoroutine(Timer());
             }
         }
+        objGet = GameObject.Find("player2(Clone)");
+
+        if (objGet != null) {
+            Health = Health;
+            ClampHealth();
+        }
     }
 
     IEnumerator Timer()
@@ -101,5 +129,17 @@ public class Status : MonoBehaviour
         //3•b‘Ò‚Â
         yield return new WaitForSeconds(5.0f);
         SceneManager.LoadScene("TitleScene");
+    }
+    void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(Health);
+        }
+        else
+        {
+            Health = (float)stream.ReceiveNext();
+            Debug.Log(Health);
+        }
     }
 }
