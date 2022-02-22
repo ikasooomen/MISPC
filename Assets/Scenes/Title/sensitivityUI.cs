@@ -45,7 +45,7 @@ public class sensitivityUI : MonoBehaviour
     public void ValueBar()
     {
         PlayerPrefs.SetFloat("sensi1", sensitivitybar.value);
-        input.text = PlayerPrefs.GetFloat("sensi1").ToString();
+        input.text = PlayerPrefs.GetFloat("sensi1").ToString("F2");
     }
 
     public void ValueInput()
