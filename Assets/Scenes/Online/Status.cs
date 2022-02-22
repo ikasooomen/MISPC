@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Photon.Pun;
+using Photon.Realtime;
 
 public class Status : MonoBehaviourPunCallbacks, IPunObservable
 {
@@ -131,6 +132,9 @@ public class Status : MonoBehaviourPunCallbacks, IPunObservable
     {
         //3•b‘Ò‚Â
         yield return new WaitForSeconds(5.0f);
+        PhotonNetwork.LeaveRoom();
+        PhotonNetwork.LeaveLobby();
+        PhotonNetwork.Disconnect();
         SceneManager.LoadScene("TitleScene");
     }
     void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)

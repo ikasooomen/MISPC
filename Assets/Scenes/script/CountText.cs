@@ -123,13 +123,22 @@ public class CountText : MonoBehaviour
 
     private IEnumerator gameOver()
     {
+
         SC = false;
         if (gamesec < 0) gamesec = 0;
         resultObject.GetComponent<ResultSetting>().getScore(score.ToString());
         resultObject.GetComponent<ResultSetting>().getTime((70-gamesec).ToString());
         resultObject.GetComponent<ResultSetting>().getHitRate(HitRateStr);
 
-        score_text.text = "Game Over";
+        if (gamesec == 0)
+        {
+            score_text.text = "Game Clear!!!";
+        }
+        else
+        {
+            score_text.text = "Game Over";
+        }
+
 
         yield return new WaitForSeconds(2.0f);
 
