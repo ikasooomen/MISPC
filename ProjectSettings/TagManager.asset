@@ -47,3 +47,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Order In Layer
+    uniqueID: 887044911
+    locked: 0
