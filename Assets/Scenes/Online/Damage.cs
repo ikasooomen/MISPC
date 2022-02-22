@@ -36,11 +36,11 @@ public class Damage : MonoBehaviour
 			}
 
 
-			if (this.tag == "Bullet2" && collision.gameObject.name == "AH_p1")
+			if (this.tag == "Bullet2" && collision.gameObject.name == "AH_p2")
 			{
 				float dmg = 0.5f;
 				Destroy(gameObject);
-				Status.Instance.TakeDamage(dmg);
+				EStatus.Instance.TakeDamage(dmg);
 			}
 
 			else if (this.tag == "Bullet" && collision.gameObject.name == "AH_p2")
