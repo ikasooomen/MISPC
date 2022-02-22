@@ -113,13 +113,13 @@ public class EStatus : MonoBehaviourPunCallbacks, IPunObservable
 
                 if (flag == 0)
                 {
-                    if (Status.Instance.Health == 0)
+                    if (EStatus.Instance.Health == 0)
                     {
                         flag = 1;
                         WL.text = "LOSE";
                         StartCoroutine(Timer());
                     }
-                    else if (EStatus.Instance.Health == 0)
+                    else if (Status.Instance.Health == 0)
                     {
                         flag = 1;
                         WL.text = "WIN";
