@@ -1,4 +1,5 @@
 using Photon.Pun;
+using Photon.Realtime;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -131,6 +132,9 @@ public class EStatus : MonoBehaviourPunCallbacks, IPunObservable
     {
         //3•b‘Ò‚Â
         yield return new WaitForSeconds(5.0f);
+        PhotonNetwork.LeaveRoom();
+        PhotonNetwork.LeaveLobby();
+        PhotonNetwork.Disconnect();
         SceneManager.LoadScene("TitleScene");
     }
 
