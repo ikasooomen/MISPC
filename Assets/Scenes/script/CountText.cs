@@ -42,6 +42,16 @@ public class CountText : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1.0f;
+        score = 0;
+        shootCount = 0;
+        hitCount = 0;
+        rate = 100f;
+        cnt = 2f;
+        cnt_2 = 2f;
+        hpcheck = true;
+        SC = false;
+
         score_text = StartTimer_object.GetComponent<Text>();
         game_text = PlayTimer_object.GetComponent<Text>();
 
