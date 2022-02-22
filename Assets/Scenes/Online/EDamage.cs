@@ -57,7 +57,7 @@ public class EDamage : MonoBehaviour
 
 		tama_timer += Time.deltaTime;
 
-		if (tama_timer >= 0.8f && this.name == "bullet_player1" && tama_red == false)
+		if (tama_timer >= 0.8f && this.tag == "Bullet" && tama_red == false)
 		{
 
 			GetComponent<Renderer>().material.color = new Color32(255, 0, 0, 255);
@@ -66,7 +66,7 @@ public class EDamage : MonoBehaviour
 			this.tag = "Bullet";
 		}
 
-		if (tama_timer >= 0.8f && this.name == "bullet_player2" && tama_blue == false)
+		if (tama_timer >= 0.8f && this.tag == "Bullet2" && tama_blue == false)
 		{
 
 			GetComponent<Renderer>().material.color = new Color32(0, 0, 255, 255);

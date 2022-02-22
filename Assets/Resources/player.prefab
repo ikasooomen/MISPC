@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 8174166452385630655}
   - component: {fileID: 985329061211038416}
   - component: {fileID: 6667748877549819466}
-  - component: {fileID: 3367774709771727159}
+  - component: {fileID: 3616183267757991572}
   - component: {fileID: 5056456043833135263}
   - component: {fileID: 6416599886988217340}
   m_Layer: 0
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 0}
   dropdown: {fileID: 0}
---- !u!114 &3367774709771727159
+--- !u!114 &3616183267757991572
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -236,7 +236,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5526478603567535547}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e2528b085c49e44ab2bbd3878e4cb3a, type: 3}
+  m_Script: {fileID: 11500000, guid: 40ead44ae982dcd4eb874e7aad00cf18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   firingPoint: {fileID: 5526478603567535547}
@@ -279,7 +279,9 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 3616183267757991572}
+  - {fileID: 5056456043833135263}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
