@@ -9,7 +9,8 @@ public class shoot : MonoBehaviour
     GameObject scoreObject;
     float stk = -10f;
     bool hitHantei = false;
-    public AudioClip SE;
+    public AudioClip se;
+    AudioSource audiosource1;
     float bonus = 2.0f;
     bool ck = false;
 
@@ -17,6 +18,7 @@ public class shoot : MonoBehaviour
     {
         scoreObject = GameObject.Find("ScriptIrerutoko");
         if (!PlayerPrefs.HasKey("gameStart")) PlayerPrefs.SetFloat("gameStart", 0);
+        audiosource1 = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -45,8 +47,8 @@ public class shoot : MonoBehaviour
                     ck = true;
                     hitHantei = true;
                     scoreObject.GetComponent<CountText>().AddScore(stk);
+                    audiosource1.PlayOneShot(se);
                     Destroy(hit.collider.gameObject);
-                    AudioSource.PlayClipAtPoint(SE, transform.position);
                 }
                 else
                 {
