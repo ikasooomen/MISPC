@@ -38,6 +38,8 @@ public class CountText : MonoBehaviour
     bool hpcheck = true;
     bool SC = false;
 
+    float scoreplus;
+
     GameObject resultObject;
 
     void Start()
@@ -60,14 +62,15 @@ public class CountText : MonoBehaviour
     }
     public void AddScore(float plusScore)
     {
-        score+= (int)plusScore+100;
+        score+= (int)(plusScore*scoreplus)+100;
     }
 
     public void NewHitrate(bool ck)
     {
             shootCount++;
             if (ck) hitCount++;
-            rate = (hitCount / shootCount) * 100f;
+        scoreplus = (hitCount / shootCount)*1.5f;
+        rate = (hitCount / shootCount) * 100f;
     }
 
     public bool StartChecker()

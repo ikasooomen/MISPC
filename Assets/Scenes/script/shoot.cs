@@ -44,6 +44,7 @@ public class shoot : MonoBehaviour
                 {
                     if (ck) stk += 10f * bonus;
                     else stk += 10f;
+                    stk %= 200;
                     ck = true;
                     hitHantei = true;
                     scoreObject.GetComponent<CountText>().AddScore(stk);
