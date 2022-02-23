@@ -49,7 +49,7 @@ public class Online : MonoBehaviourPunCallbacks
     }
 
     // ëºÇÃÉvÉåÉCÉÑÅ[Ç™ëﬁé∫ÇµÇΩéû
-    public override void OnPlayerLeftRoom(Player otherPlayer)
+    /*public override void OnPlayerLeftRoom(Player otherPlayer)
     {
         Debug.Log("OnPlayerLeftRoom");
         Time.timeScale = 1.0f;
@@ -57,6 +57,6 @@ public class Online : MonoBehaviourPunCallbacks
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("TitleScene");
-    }
+    }*/
 
 }
